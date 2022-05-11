@@ -91,13 +91,13 @@ let condicionPago = confirm("Bienvenido. El cliente paga al contado?");
 let precioProducto4 = parseInt(prompt("Ingrese precio de referencia")); 
 if (condicionPago) {
     //nuevo precio = (precio + iva) - descuento 15 porciento
-   let nuevoPrecio = descuentoContado(iva(precioProducto4));
+   let nuevoPrecio = descuentoContado(precioConIva(precioProducto4));
    alert("Total a facturar es: " + nuevoPrecio);
     
 } else {
     let cuotas = parseInt(prompt("Ingrese cantidad de cuotas entre 3 y 12"));
     if ((cuotas >= 3) && (cuotas <=12)) {
-        let valorCuota = precioProducto4 / valorCuota;
+        let valorCuota = precioProducto4 / cuotas;
         alert("El total a facturar es: " + precioProducto4 + ". En " + cuotas + " cuotas de " + valorCuota);
     }else {
         alert("Usted a ingresado un numero de cuotas erroneo.")
