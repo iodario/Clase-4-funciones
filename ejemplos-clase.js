@@ -104,7 +104,46 @@ if (condicionPago) {
     }
 }
 
+//03- ejemplo adivinador. funciones con un condicional, y con un ciclo
 
 
 
+function adivinar (numero_usuario) {
 
+    let mensaje = "";
+    let numero = parseInt(numero_usuario);
+
+    if (numero_usuario == ""){
+        mensaje = 'Debes ingresar un dato'
+
+    } else if (isNaN(numero)){
+        mensaje = "No ingresaste un numero entero";
+
+    } else if (numero > secretNum){
+        mensaje = "Ingresaste un numero mayor";
+         
+    } else if (numero < secretNum){
+        mensaje = "Ingresaste un numero menor";
+
+    } else {
+        mensaje = "GENIAL ES EL NUMERO CORRECTO";
+
+    }
+
+    return mensaje;
+}
+
+/*
+let ingreso = prompt("Ingrese un numero");
+let msj = adivinar(ingreso);
+alert(msj);
+*/
+
+//repetir esta funcion hasta que el usuario encuentre el numero correcto
+const secretNum = 25;
+let ingreso = 0
+while(secretNum != ingreso){
+let ingreso = prompt("Ingrese un numero");
+let msj = adivinar(ingreso);
+alert(msj);
+}
